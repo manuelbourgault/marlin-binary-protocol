@@ -12,11 +12,7 @@ import serial
 from binproto2.exceptions import (ConnectionLost, FatalError, PayloadOverflow,
                                   ReadTimeout, SynchronizationError)
 import heatshrink2 as heatshrink
-
-try:
-    from time import perf_counter
-except ImportError:
-    from backports.time_perf_counter import perf_counter
+from time import perf_counter
 
 def _millis():
     return perf_counter() * 1000
